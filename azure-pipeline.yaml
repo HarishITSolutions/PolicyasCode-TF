@@ -5,7 +5,7 @@ trigger: none
 variables:
   # There must be an Azure Service Connection with that name defined in your Azure DevOps settings. See https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops
   serviceConnection: 'policyascodetestsc'
-  #azureLocation: 'eastus'
+  azureLocation: 'eastus'
   # Terraform settings
   terraformWorkingDirectory: '$(System.DefaultWorkingDirectory)'
   terraformVersion: '1.5.0'
