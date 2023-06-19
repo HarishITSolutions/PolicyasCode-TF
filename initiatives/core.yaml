@@ -17,6 +17,7 @@ policies:
           value:
             - australiaeast
             - uswest
+            - eastus
       effect: deny
   CostCentreTag:
     type: "BuiltIn"
