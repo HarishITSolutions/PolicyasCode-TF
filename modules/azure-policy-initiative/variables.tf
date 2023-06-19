@@ -1,15 +1,11 @@
 variable "initiative_definition" {
   type        = string
-  description = <<DESC
-    (Required) path to the initiative definition file
-  DESC
+  description = "Initiative Definition"
 }
 
 variable "environment" {
   type        = string
-  description = <<DESC
-    (Required) environment that the initiatives should be applied to.
-  DESC
+  description = "dev"
 }
 
 variable "assignment" {
@@ -20,15 +16,7 @@ variable "assignment" {
     }))
     scope = optional(string, "rg")
   })
-  description = <<DESC
-    (Required) assignment details for the policy.
-    Properties:
-      `assignments` (Required)    - list of assignments
-        `id` (Required)   - resource ID
-        `name` (Required) - friendly name/reference for the assignment
-      `scope` (Optional)          - resource scope for assignment [Default: `rg`]
-
-  DESC
+  description = "Global Core Initiative"
 
   validation {
     condition = contains(
@@ -47,15 +35,7 @@ variable "exemptions" {
     category             = string
     assignment_reference = string
   }))
-  description = <<DESC
-    (Optional) List of exemption objects
-    Properties:
-      `id` (Required)                   - the resource ID for the exemption
-      `risk_id` (Required)              - internal risk reference ID
-      `scope` (Required)                - the scope for the exemption (sub, mg, rg)
-      `category` (Required)             - exemption category
-      `assignment_reference` (Required) - assignment friendly name/reference
-  DESC
+  description = "Global Core Exemptions"
 
   validation {
     condition = alltrue(
