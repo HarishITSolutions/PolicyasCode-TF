@@ -18,7 +18,7 @@ module "global_core" {
   }
 
   exemptions = [{
-    assignment_reference = "Testresourcegroup1"
+    assignment_reference = "Test"
     category             = "Mitigated"
     id                   = data.azurerm_resource_group.this.id
     risk_id              = "R-001"
