@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 data "azurerm_resource_group" "this" {
-  name = "rg-policy"
+  name = "Testresourcegroup1"
 }
 
 module "global_core" {
