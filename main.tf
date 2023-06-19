@@ -1,3 +1,14 @@
+data "azurerm_resource_group" "this" {
+
+
+}
+
+// data "azurerm_subnet" "management" {
+//   name                 = var.vm_subnet_name
+//   virtual_network_name = var.vnet_name
+//   resource_group_name  = var.vnet_resource_group_name
+// }
+
 module "global_core" {
   source = "./modules/azure-policy-initiative"
 
