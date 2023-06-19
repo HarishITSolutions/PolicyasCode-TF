@@ -1,13 +1,10 @@
-data "azurerm_resource_group" "this" {
-
-
+provider "azurerm" {
+  features {}
 }
 
-// data "azurerm_subnet" "management" {
-//   name                 = var.vm_subnet_name
-//   virtual_network_name = var.vnet_name
-//   resource_group_name  = var.vnet_resource_group_name
-// }
+data "azurerm_resource_group" "this" {
+  name = "rg-policy"
+}
 
 module "global_core" {
   source = "./modules/azure-policy-initiative"
@@ -21,7 +18,7 @@ module "global_core" {
   }
 
   exemptions = [{
-    assignment_reference = "DefaultRG"
+    assignment_reference = "Testresourcegroup1"
     category             = "Mitigated"
     id                   = data.azurerm_resource_group.this.id
     risk_id              = "R-001"
