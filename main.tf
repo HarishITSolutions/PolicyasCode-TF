@@ -4,7 +4,7 @@ module "global_core" {
   assignment = {
     assignments = [{
       id   = data.azurerm_resource_group.this.id
-      name = "DefaultRG"
+      name = "Testresourcegroup1"
     }]
     scope = "rg"
   }
