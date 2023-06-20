@@ -19,6 +19,12 @@ policies:
             - uswest
             - eastus
       effect: deny
+  AuditStorageAccount:
+    type: "Custom"
+    file: audit_storage_account.json
+    default:
+      parameters:
+      effect: audit
   CostCentreTag:
     type: "BuiltIn"
     id: 1e30110a-5ceb-460c-a204-c1c3969c6d62
