@@ -1,11 +1,12 @@
 {
   "properties": {
-    "displayName": "Audit Storage account with public access policy",
+    "displayName": "Testing Audit Storage account with public access policy",
     "policyType": "Custom",
     "mode": "All",
-    "description": "Audit Storage account with public access policy",
+    "description": "Testing Audit Storage account with public access policy",
     "metadata": {
-      "category": "Guardrails"
+      "version": "1.0.0",
+      "category": "General"
     },
     "parameters": {},
     "policyRule": {
