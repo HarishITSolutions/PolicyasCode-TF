@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "displayName": "Audit Storage account with public access policy",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Audit Storage account with public access policy",
+    "metadata": {
+      "category": "Guardrails"
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Storage/storageAccounts"
+          },
+          {
+            "field": "Microsoft.Storage/storageAccounts/networkAcls.defaultAction",
+            "notequals": "Deny"
+          }
+        ]
+      },
+      "then": {
+        "effect": "audit"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/Guardrails/providers/Microsoft.Authorization/policyDefinitions/281dd069-4aee-4e69-9eb6-bd69f4249080",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "281dd069-4aee-4e69-9eb6-bd69f4249080"
+}
