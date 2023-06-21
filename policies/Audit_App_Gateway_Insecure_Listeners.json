@@ -17,6 +17,6 @@
       ]
     },
     "then": {
-      "effect": "${effect}"
+      "effect": "audit"
     }
 }
