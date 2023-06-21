@@ -1,23 +1,30 @@
 {
-  "policyType": "Custom",
-  "mode": "All",
-  "displayName": "Test-Audit App Gateway Insecure Listeners",
-  "description": "Test-Policy to block app gateway with insecure listeners. Listeners should be https only. ",
-  "policyRule": {
-    "if": {
-      "allOf": [
-        {
-          "field": "type",
-          "equals": "Microsoft.Network/applicationGateways"
-        },
-        {
-          "field": "Microsoft.Network/applicationGateways/httpListeners[*].protocol",
-          "equals": "http"
-        }
-      ]
+  "properties": {
+    "displayName": "Test-Audit App Gateway Insecure Listeners",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Test-Policy to block app gateway with insecure listeners. Listeners should be https only",
+    "metadata": {
+      "version": "1.0.0",
+      "category": "General"
     },
-    "then": {
-      "effect": "${effect}"
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Network/applicationGateways"
+          },
+          {
+            "field": "Microsoft.Network/applicationGateways/httpListeners[*].protocol",
+            "equals": "http"
+          }
+        ]
+      },
+      "then": {
+        "effect": "${effect}"
+      }
     }
   }
 }
