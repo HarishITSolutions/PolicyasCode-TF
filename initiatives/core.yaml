@@ -54,4 +54,4 @@ policies:
       effect: audit
     dev:
       parameters:
-      effect: audit
+      effect: deny
