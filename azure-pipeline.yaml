@@ -65,12 +65,11 @@ stages:
           workingDirectory: $(terraformWorkingDirectory)
           environmentServiceName: $(serviceConnection)
           commandOptions: -var location=$(azureLocation)
-#      # Step 5: run Terraform apply
-#      - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
-#        displayName: 'Run terraform apply'
-#        inputs:
-#          command: apply
-#          workingDirectory: $(terraformWorkingDirectory)
-#          environmentServiceName: $(serviceConnection)
-#          commandOptions: -var location=$(azureLocation)
-#
+      # Step 5: run Terraform apply
+      - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+        displayName: 'Run terraform apply'
+        inputs:
+          command: apply
+          workingDirectory: $(terraformWorkingDirectory)
+          environmentServiceName: $(serviceConnection)
+          commandOptions: -var location=$(azureLocation)
