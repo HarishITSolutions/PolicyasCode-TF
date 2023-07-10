@@ -1,5 +1,5 @@
-name: "global-core-initiative"
-display_name: Global Core Inititive
+name: "global-core-initiative-testing"
+display_name: Global Core Inititive Testing
 description: Core initiative scoped to the global level
 policies:
   AllowedLocations:
