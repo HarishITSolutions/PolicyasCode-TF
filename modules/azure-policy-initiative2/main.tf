@@ -1,4 +1,4 @@
-resource "random_uuid" "policy2" {
+resource "random_uuid" "policy" {
   for_each = {
     for k, v in local.policies2 :
     k => v
