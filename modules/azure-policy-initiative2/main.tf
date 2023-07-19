@@ -1,6 +1,6 @@
 resource "random_uuid" "policy" {
   for_each = {
-    for k, v in local.policies :
+    for k, v in local.policies2 :
     k => v
     if v.type == "Custom"
   }
@@ -15,16 +15,16 @@ resource "random_uuid" "assignment" {
 
 locals {
   initiative_definition = yamldecode(file(var.initiative_definition))
-  policies              = local.initiative_definition.policies  
+  policies              = local.initiative_definition.policies2  
 }
 
 
 resource "azurerm_policy_definition" "this" {
   for_each = {
-    for k, v in local.policies :
+    for k, v in local.policies2 :
     k => jsondecode(
       templatefile(
-        "${path.root}/policies/${v.file}",
+        "${path.root}/policies2/${v.file}",
         { effect = try(v[var.environment].effect, v.default.effect) }
       )
     )
@@ -43,7 +43,7 @@ resource "azurerm_policy_definition" "this" {
 
 data "azurerm_policy_definition" "this" {
   for_each = {
-    for k, v in local.policies :
+    for k, v in local.policies2 :
     k => v
     if v.type == "BuiltIn"
   }
@@ -57,8 +57,8 @@ locals {
   parameters = {
     for k, v in local.all_policies :
     k => try(
-      local.policies[k][var.environment].parameters,
-      local.policies[k].default.parameters
+      local.policies2[k][var.environment].parameters,
+      local.policies2[k].default.parameters
     )
   }
 }
