@@ -2,6 +2,11 @@ variable "initiative_definition" {
   type        = string
   description = "Initiative Definition"
 }
+variable "initiative_definition2" {
+  type        = string
+  description = "Initiative Definition2"
+}
+
 
 variable "environment" {
   type        = string
