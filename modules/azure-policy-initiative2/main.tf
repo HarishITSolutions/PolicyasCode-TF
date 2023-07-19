@@ -14,8 +14,8 @@ resource "random_uuid" "assignment" {
 }
 
 locals {
-  initiative_definition = yamldecode(file(var.initiative_definition))
-  policies2              = local.initiative_definition.policies2  
+  initiative_definition2 = yamldecode(file(var.initiative_definition2))
+  policies2              = local.initiative_definition2.policies2  
 }
 
 
