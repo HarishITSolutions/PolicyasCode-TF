@@ -1,6 +1,6 @@
-variable "initiative_definition" {
+variable "initiative_definition2" {
   type        = string
-  description = "Initiative Definition"
+  description = "Initiative Definition 2"
 }
 
 variable "environment" {
