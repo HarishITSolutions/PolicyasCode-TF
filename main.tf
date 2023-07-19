@@ -59,5 +59,5 @@ module "global_core2" {
   }]
 
   environment           = "dev"
-  initiative_definition = format("%s/initiatives/core2.yaml", path.module)
+  initiative_definition2 = format("%s/initiatives/core2.yaml", path.module)
 }
