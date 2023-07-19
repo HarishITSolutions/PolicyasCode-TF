@@ -1,6 +1,6 @@
-name: "global-core-initiative-testing"
-display_name: Global Core Inititive Testing
-description: Core initiative scoped to the global level
+name: "global-core-initiative-testing-2"
+display_name: Global Core Inititive Testing 2
+description: Core initiative scoped to the global level 2
 policies:
   AllowedLocations:
     type: "Custom"
@@ -46,12 +46,4 @@ policies:
           value: "Owner"
         tagValue:
           value: "BLT"
-  AuditAppGateway:
-    type: "Custom"
-    file: Audit_App_Gateway_Insecure_Listeners.json
-    default:
-      parameters:
-      effect: audit
-    dev:
-      parameters:
-      effect: audit
+
