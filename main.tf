@@ -39,7 +39,7 @@ module "global_core" {
   initiative_definition = format("%s/initiatives/core.yaml", path.module)
 }
 
-module "global_core" {
+module "global_core2" {
   source = "./modules/azure-policy-initiative2"
 
   assignment = {
