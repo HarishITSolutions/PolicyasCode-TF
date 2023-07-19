@@ -37,5 +37,27 @@ module "global_core" {
 
   environment           = "dev"
   initiative_definition = format("%s/initiatives/core.yaml", path.module)
-  initiative_definition2 = format("%s/initiatives/core2.yaml", path.module)
+}
+
+module "global_core" {
+  source = "./modules/azure-policy-initiative2"
+
+  assignment = {
+    assignments = [{
+      id   = data.azurerm_resource_group.this.id
+      name = "Testresourcegroup1"
+    }]
+    scope = "rg"
+  }
+
+  exemptions = [{
+    assignment_reference = "Test"
+    category             = "Mitigated"
+    id                   = data.azurerm_resource_group.this.id
+    risk_id              = "R-001"
+    scope                = "rg"
+  }]
+
+  environment           = "dev"
+  initiative_definition = format("%s/initiatives/core2.yaml", path.module)
 }
