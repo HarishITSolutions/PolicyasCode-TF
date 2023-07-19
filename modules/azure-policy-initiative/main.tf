@@ -16,7 +16,10 @@ resource "random_uuid" "assignment" {
 locals {
   initiative_definition = yamldecode(file(var.initiative_definition))
   policies              = local.initiative_definition.policies
+  initiative_definition2 = yamldecode(file(var.initiative_definition2))
+  policies              = local.initiative_definition2.policies
 }
+
 
 resource "azurerm_policy_definition" "this" {
   for_each = {
