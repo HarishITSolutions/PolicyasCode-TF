@@ -64,10 +64,10 @@ locals {
 }
 
 resource "azurerm_policy_set_definition" "this" {
-  name         = local.initiative_definition.name
+  name         = local.initiative_definition2.name
   policy_type  = "Custom"
-  display_name = local.initiative_definition.display_name
-  description  = local.initiative_definition.description
+  display_name = local.initiative_definition2.display_name
+  description  = local.initiative_definition2.description
 
   dynamic "policy_definition_reference" {
     for_each = local.all_policies
