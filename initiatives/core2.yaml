@@ -1,0 +1,57 @@
+name: "global-core-initiative-testing"
+display_name: Global Core Inititive Testing
+description: Core initiative scoped to the global level
+policies:
+  AllowedLocations:
+    type: "Custom"
+    file: allowed_locations.json
+    default:
+      parameters:
+        listOfAllowedLocations:
+          value:
+            - australiaeast
+      effect: audit
+    dev:
+      parameters:
+        listOfAllowedLocations:
+          value:
+            - australiaeast
+            - uswest
+            - eastus
+      effect: deny
+  AuditStorageAccount:
+    type: "Custom"
+    file: audit_storage_account.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: deny
+  CostCentreTag:
+    type: "BuiltIn"
+    id: 1e30110a-5ceb-460c-a204-c1c3969c6d62
+    default:
+      parameters:
+        tagName:
+          value: "CostCentre"
+        tagValue:
+          value: "abc-123"
+  OwnerTag:
+    type: "BuiltIn"
+    id: 1e30110a-5ceb-460c-a204-c1c3969c6d62
+    default:
+      parameters:
+        tagName:
+          value: "Owner"
+        tagValue:
+          value: "BLT"
+  AuditAppGateway:
+    type: "Custom"
+    file: Audit_App_Gateway_Insecure_Listeners.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
