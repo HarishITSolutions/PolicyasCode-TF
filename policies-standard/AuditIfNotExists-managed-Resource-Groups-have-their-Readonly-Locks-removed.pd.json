@@ -1,0 +1,37 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Audit if managed Resource Groups have their Readonly Locks removed",
+	  "description": "Will audit if the resource groups [\"cs-expressroute\"] have any readonly locks removed",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+			},
+			{
+			  "field": "name",
+			  "in": [
+				"cs-expressroute"
+			  ]
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "auditIfNotExists",
+		  "details": {
+			"type": "Microsoft.Authorization/locks",
+			"existenceCondition": {
+			  "field": "Microsoft.Authorization/locks/level",
+			  "equals": "ReadOnly"
+			}
+		  }
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

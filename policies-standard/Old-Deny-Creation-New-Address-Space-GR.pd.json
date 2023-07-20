@@ -1,0 +1,30 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Old-Deny-Creation-New-Address-Space-GR",
+	  "description": "Denies the creation of any new address spaces by customers for Guardrails subscriptions. (Only one address space allowed) ",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Network/virtualNetworks"
+			},
+			{
+			  "count": {
+				"field": "Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]"
+			  },
+			  "greater": 1
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "deny"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

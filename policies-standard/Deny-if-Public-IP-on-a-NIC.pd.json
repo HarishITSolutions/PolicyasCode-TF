@@ -1,0 +1,30 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Deny if Public IP on a NIC",
+	  "description": "This policy denies a user from having a public IP address on a NIC on creation.",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Network/networkInterfaces"
+			},
+			{
+			  "not": {
+				"field": "Microsoft.Network/networkInterfaces/ipconfigurations[*].publicIpAddress.id",
+				"exists": false
+			  }
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "deny"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

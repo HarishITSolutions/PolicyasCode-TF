@@ -1,0 +1,19 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Deny-VPN-Gateway",
+	  "policyRule": {
+		"if": {
+		  "field": "type",
+		  "equals": "Microsoft.Network/virtualNetworkGateways"
+		},
+		"then": {
+		  "effect": "deny"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

@@ -1,0 +1,39 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "Indexed",
+	  "displayName": "Deny VNET Creation",
+	  "description": "This policy is to be used to deny vnet creation",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Network/virtualNetworks"
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "[parameters('effect')]"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  },
+	  "parameters": {
+		"effect": {
+		  "type": "String",
+		  "metadata": {
+			"displayName": "Effect",
+			"description": "The effect determines what happens when the policy rule is evaluated to match"
+		  },
+		  "allowedValues": [
+			"Deny",
+			"Disabled"
+		  ],
+		  "defaultValue": "Disabled"
+		}
+	  }
+
+	}
+}

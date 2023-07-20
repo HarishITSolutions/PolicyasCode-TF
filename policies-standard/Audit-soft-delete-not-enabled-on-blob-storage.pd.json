@@ -1,0 +1,28 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Audit soft delete not enabled on blob storage",
+	  "description": "Audits if soft delete retention policy set on storage accounts",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Storage/storageAccounts/blobServices"
+			},
+			{
+			  "field": "Microsoft.Storage/storageAccounts/blobServices/deleteRetentionPolicy.enabled",
+			  "notEquals": "true"
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "audit"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

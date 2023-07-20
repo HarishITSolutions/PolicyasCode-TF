@@ -1,0 +1,20 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Deny Express Route Circuit",
+	  "description": "Disallows GR-AZURE-Limited subscriptions from creating their own Express Route circuit.",
+	  "policyRule": {
+		"if": {
+		  "field": "type",
+		  "equals": "Microsoft.Network/expressRouteCircuits"
+		},
+		"then": {
+		  "effect": "deny"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

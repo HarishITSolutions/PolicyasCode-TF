@@ -1,0 +1,63 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Append nsg-Private if no NSG on subnet",
+	  "description": "This is a policy managed by the GR team, it appends the nsg-Private Resource to Subnet with no NSGs.\nGEINC13072100 - Added AppGatewaySubnet-QA to exception criteria ",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Network/virtualNetworks/subnets"
+			},
+			{
+			  "field": "Microsoft.Network/virtualNetworks/subnets/networkSecurityGroup.id",
+			  "exists": "false"
+			},
+			{
+			  "field": "Microsoft.Network/virtualNetworks/subnets/delegations[*].serviceName",
+			  "notIn": [
+				"Microsoft.Netapp/volumes"
+			  ]
+			},
+			{
+			  "field": "name",
+			  "notIn": [
+				"GatewaySubnet",
+				"AzureFirewallSubnet",
+				"AzureFirewallManagementSubnet",
+				"TCAppGatewaySubnet",
+				"AzureBastionSubnet",
+				"AppGatewaySubnet",
+				"AppGatewaySubnet-Dev",
+				"AppGatewaySubnet-Qa",
+				"ARO-POC-subnet1",
+				"ARO-POC-subnet2",
+				"OpenShift-worker-1",
+				"OpenShift-worker-2",
+				"OpenShift-master-1",
+				"OpenShift-master-2"
+			  ]
+			},
+			{
+			  "field": "name",
+			  "notlike": "*-TF"
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "append",
+		  "details": [
+			{
+			  "field": "Microsoft.Network/virtualNetworks/subnets/networkSecurityGroup.id",
+			  "value": "[concat(resourceGroup().id, '/providers/Microsoft.Network/networkSecurityGroups/nsg-Private')]"
+			}
+		  ]
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

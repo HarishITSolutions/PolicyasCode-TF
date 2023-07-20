@@ -1,0 +1,30 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Audit Storage Account Encryption in Transit",
+	  "description": "Audits whether the storage accounts are using HTTPS protocol for encryption in transit",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Storage/storageAccounts"
+			},
+			{
+			  "not": {
+				"field": "Microsoft.Storage/storageAccounts/supportsHttpsTrafficOnly",
+				"equals": "True"
+			  }
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "audit"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}
