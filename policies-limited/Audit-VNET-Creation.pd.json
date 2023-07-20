@@ -1,0 +1,20 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Audit VNET Creation",
+	  "description": "Audits the creation of VNET within an subscription",
+	  "policyRule": {
+		"if": {
+		  "field": "type",
+		  "equals": "Microsoft.Network/virtualNetworks"
+		},
+		"then": {
+		  "effect": "audit"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

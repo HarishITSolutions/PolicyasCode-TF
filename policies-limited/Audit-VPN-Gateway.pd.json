@@ -1,0 +1,19 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Audit-VPN-Gateway",
+	  "policyRule": {
+		"if": {
+		  "field": "type",
+		  "equals": "Microsoft.Network/virtualNetworkGateways"
+		},
+		"then": {
+		  "effect": "audit"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

@@ -1,0 +1,19 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Deny-Azure-ActiveDirectory-B2C",
+	  "policyRule": {
+		"if": {
+		  "field": "type",
+		  "equals": "Microsoft.AzureADB2C"
+		},
+		"then": {
+		  "effect": "deny"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

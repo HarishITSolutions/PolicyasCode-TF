@@ -1,0 +1,32 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Deny Enabling the MDE integration in ASC",
+	  "description": "Deny Enable \"Allow Microsoft Defender for Endpoint to access my data\" feature in Azure Security Center.\nFrom requested by GE CIRT Team \"Microsoft Defender for Endpoint exporting Data is Disabled.\nThis policy will restrict Subscription Owners to Enable this feature.\n",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "id",
+			  "contains": "Microsoft.Security/settings/WDATP"
+			},
+			{
+			  "field": "name",
+			  "equals": "WDATP"
+			},
+			{
+			  "field": "Microsoft.Security/settings/DataExportSetting.enabled",
+			  "equals": true
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "deny"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

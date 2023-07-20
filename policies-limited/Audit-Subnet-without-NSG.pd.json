@@ -1,0 +1,34 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Audit Subnet without NSG",
+	  "description": "Policy will audit if Subnet does not contain NSG (LIMITED ONLY)",
+	  "policyRule": {
+		"if": {
+		  "allOf": [
+			{
+			  "field": "type",
+			  "equals": "Microsoft.Network/virtualNetworks/subnets"
+			},
+			{
+			  "not": {
+				"field": "name",
+				"equals": "GatewaySubnet"
+			  }
+			},
+			{
+			  "field": "Microsoft.Network/virtualNetworks/subnets/networkSecurityGroup.id",
+			  "exists": "false"
+			}
+		  ]
+		},
+		"then": {
+		  "effect": "audit"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}

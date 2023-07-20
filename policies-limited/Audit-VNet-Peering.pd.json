@@ -1,0 +1,20 @@
+{
+  "properties":{
+	  "policyType": "Custom",
+	  "mode": "All",
+	  "displayName": "Audit VNet Peering",
+	  "description": "Audits when a VNet is peered, and is connected to an Alert (???) for an engineer to assure that the VNet peered was not in a different subscription",
+	  "policyRule": {
+		"if": {
+		  "field": "type",
+		  "equals": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
+		},
+		"then": {
+		  "effect": "audit"
+		}
+	  },
+	  "metadata": {
+		"category": "Guardrails"
+	  }
+	}
+}
