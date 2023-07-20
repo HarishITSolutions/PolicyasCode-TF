@@ -1,0 +1,139 @@
+name: "global-core-initiative-testing-Limited"
+display_name: Global Core Inititive Testing 2
+description: Core initiative scoped to the global level 2
+policies:
+  Audit-App-Gateway-Insecure-Listeners:
+    type: "Custom"
+    file: Audit-App-Gateway-Insecure-Listeners.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-blob-encryption-for-storage-accounts:
+    type: "Custom"
+    file: Audit-blob-encryption-for-storage-accounts.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-File-Encryption-in-Storage-account:
+    type: "Custom"
+    file: Audit-File-Encryption-in-Storage-account.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Storage-Account-Encryption-in-Transit:
+    type: "Custom"
+    file: Audit-Storage-Account-Encryption-in-Transit.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Storage-account-with-public-access-policy:
+    type: "Custom"
+    file: Audit-Storage-account-with-public-access-policy.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Subnet-without-NSG:
+    type: "Custom"
+    file: Audit-Subnet-without-NSG.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-VNET-Creation:
+    type: "Custom"
+    file: Audit-VNET-Creation.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-VNet-Peering:
+    type: "Custom"
+    file: Audit-VNet-Peering.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-VPN-Gateway:
+    type: "Custom"
+    file: Audit-VPN-Gateway.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Customer-Tag-Enforcement:
+    type: "Custom"
+    file: Audit-Customer-Tag-Enforcement.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Deny-Azure-ActiveDirectory-B2C:
+    type: "Custom"
+    file: Deny-Azure-ActiveDirectory-B2C.pd.json
+    default:
+      parameters:
+      effect: deny
+    dev:
+      parameters:
+      effect: deny
+  Deny-Enabling-the-MDE-integration-in-ASC:
+    type: "Custom"
+    file: Deny-Enabling-the-MDE-integration-in-ASC.pd.json
+    default:
+      parameters:
+      effect: deny
+    dev:
+      parameters:
+      effect: deny
+  Deny-Express-Route-Circuit:
+    type: "Custom"
+    file: Deny-Express-Route-Circuit.pd.json
+    default:
+      parameters:
+      effect: deny
+    dev:
+      parameters:
+      effect: deny
+  DeployIfNotExists-Automatically-Configure-NSG-To-Enable-Flowlogs:
+    type: "Custom"
+    file: DeployIfNotExists-Automatically-Configure-NSG-To-Enable-Flowlogs.pd.json
+    default:
+      parameters:
+      effect: deployIfNotExists
+    dev:
+      parameters:
+      effect: deployIfNotExists
+  Deny-Inherit-a-tag-from-the-resource-group-if-missing:
+    type: "Custom"
+    file: Deny-Inherit-a-tag-from-the-resource-group-if-missing.pd.json
+    default:
+      parameters:
+      effect: modify
+    dev:
+      parameters:
+      effect: modify

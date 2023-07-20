@@ -1,0 +1,329 @@
+name: "global-core-initiative-testing-standard"
+display_name: global-core-initiative-testing-standard
+description: Core initiative scoped to the global level
+policies:
+  Append-nsg-Private-if-no-NSG-on-subnet:
+    type: "Custom"
+    file: Append-nsg-Private-if-no-NSG-on-subnet.pd.json
+    default:
+      parameters:
+      effect: append
+    dev:
+      parameters:
+      effect: audit
+  Append-rt-Private-if-no-RT-on-subnet:
+    type: "Custom"
+    file: Append-rt-Private-if-no-RT-on-subnet.pd.json
+    default:
+      parameters:
+      effect: append
+    dev:
+      parameters:
+      effect: audit
+  Audit-blob-encryption-for-storage-accounts:
+    type: "Custom"
+    file: Audit-blob-encryption-for-storage-accounts.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Customer-Tag-Enforcement:
+    type: "Custom"
+    file: Audit-Customer-Tag-Enforcement.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Disk-Snapshot:
+    type: "Custom"
+    file: Audit-Disk-Snapshot.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-File-Encryption-in-Storage-account:
+    type: "Custom"
+    file: Audit-File-Encryption-in-Storage-account.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-moving-disks-between-subscriptions:
+    type: "Custom"
+    file: Audit-moving-disks-between-subscriptions.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-shared-snapshots-between-subscriptions:
+    type: "Custom"
+    file: Audit-shared-snapshots-between-subscriptions.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-soft-delete-not-enabled-on-blob-storage:
+    type: "Custom"
+    file: Audit-soft-delete-not-enabled-on-blob-storage.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Storage-Account-Encryption-in-Transit:
+    type: "Custom"
+    file: Audit-Storage-Account-Encryption-in-Transit.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Storage-account-with-public-access-policy:
+    type: "Custom"
+    file: Audit-Storage-account-with-public-access-policy.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  Audit-Subnets-Created-by-Terraform-with-No-RT-or-NSG-associated:
+    type: "Custom"
+    file: Audit-Subnets-Created-by-Terraform-with-No-RT-or-NSG-associated.pd.json
+    default:
+      parameters:
+      effect: audit
+    dev:
+      parameters:
+      effect: audit
+  AuditIfNotExists-Azure-Backup-should-be-enabled-for-Virtual-Machines:
+    type: "Custom"
+    file: AuditIfNotExists-Azure-Backup-should-be-enabled-for-Virtual-Machines.pd.json
+    default:
+      parameters:
+      effect: AuditIfNotExists
+    dev:
+      parameters:
+      effect: AuditIfNotExists
+  AuditIfNotExists-managed-Resource-Groups-have-their-No-Delete-Locks-removed:
+    type: "Custom"
+    file: AuditIfNotExists-managed-Resource-Groups-have-their-No-Delete-Locks-removed.pd.json
+    default:
+      parameters:
+      effect: AuditIfNotExists
+    dev:
+      parameters:
+      effect: AuditIfNotExists
+  AuditIfNotExists-managed-Resource-Groups-have-their-Readonly-Locks-removed:
+    type: "Custom"
+    file: AuditIfNotExists-managed-Resource-Groups-have-their-Readonly-Locks-removed.pd.json
+    default:
+      parameters:
+      effect: AuditIfNotExists
+    dev:
+      parameters:
+      effect: AuditIfNotExists
+  Deny-Allow-All-NSG-Rule-Creation:
+    type: "Custom"
+    file: Deny-Allow-All-NSG-Rule-Creation.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-Azure-ActiveDirectory-B2C:
+    type: "Custom"
+    file: Deny-Azure-ActiveDirectory-B2C.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-Creation-New-Address-Space-GR:
+    type: "Custom"
+    file: Deny-Creation-New-Address-Space-GR.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-Creation-PrivateDNSZone-Named-Privatelink:
+    type: "Custom"
+    file: Deny-Creation-PrivateDNSZone-Named-Privatelink.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-Creation-PrivateDNSZoneGroups-DNS-integration-Except-DINE-Policies-With-DeployedByPolicy-In-Name:
+    type: "Custom"
+    file: Deny-Creation-PrivateDNSZoneGroups-DNS-integration-Except-DINE-Policies-With-DeployedByPolicy-In-Name.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-Enabling-the-MDE-integration-in-ASC:
+    type: "Custom"
+    file: Deny-Enabling-the-MDE-integration-in-ASC.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-Express-Route-Circuit:
+    type: "Custom"
+    file: Deny-Express-Route-Circuit.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-if-Public-IP-on-a-NIC:
+    type: "Custom"
+    file: Deny-if-Public-IP-on-a-NIC.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-LocalNetwork-Gateway:
+    type: "Custom"
+    file: Deny-LocalNetwork-Gateway.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-sharing-images-via-the-shared-image-gallery-to-other-tenants-or-with-Microsoft-accounts:
+    type: "Custom"
+    file: Deny-sharing-images-via-the-shared-image-gallery-to-other-tenants-or-with-Microsoft-accounts.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-VNET-Creation:
+    type: "Custom"
+    file: Deny-VNET-Creation.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-VNET-Peering:
+    type: "Custom"
+    file: Deny-VNET-Peering.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  Deny-VPN-Gateway:
+    type: "Custom"
+    file: Deny-VPN-Gateway.pd.json
+    default:
+      parameters:
+      effect: Deny
+    dev:
+      parameters:
+      effect: Deny
+  DeployIfNotExists-Automatically-Configure-NSG-To-Enable-Flowlogs:
+    type: "Custom"
+    file: DeployIfNotExists-Automatically-Configure-NSG-To-Enable-Flowlogs.pd.json
+    default:
+      parameters:
+      effect: DeployIfNotExists
+    dev:
+      parameters:
+      effect: DeployIfNotExists
+  DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-AzureFiles:
+    type: "Custom"
+    file: DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-AzureFiles.pd.json
+    default:
+      parameters:
+      effect: DeployIfNotExists
+    dev:
+      parameters:
+      effect: DeployIfNotExists
+  DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-Blob:
+    type: "Custom"
+    file: DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-Blob.pd.json
+    default:
+      parameters:
+      effect: DeployIfNotExists
+    dev:
+      parameters:
+      effect: DeployIfNotExists
+  DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-KeyVault:
+    type: "Custom"
+    file: DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-KeyVault.pd.json
+    default:
+      parameters:
+      effect: DeployIfNotExists
+    dev:
+      parameters:
+      effect: DeployIfNotExists
+  DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-SQL:
+    type: "Custom"
+    file: DeployIfNotExists-Automatically-Create-Required-PrivateDNSZoneGroup-SQL.pd.json
+    default:
+      parameters:
+      effect: DeployIfNotExists
+    dev:
+      parameters:
+      effect: DeployIfNotExists
+  DeployIfNotExists-Diagnostic-Settings-for-Key-Vault-to-Log-Analytics-workspace:
+    type: "Custom"
+    file: DeployIfNotExists-Diagnostic-Settings-for-Key-Vault-to-Log-Analytics-workspace.pd.json
+    default:
+      parameters:
+      effect: DeployIfNotExists
+    dev:
+      parameters:
+      effect: DeployIfNotExists
+  DeployIfNotExists-SQL-DB-transparent-data-encryption:
+    type: "Custom"
+    file: DeployIfNotExists-SQL-DB-transparent-data-encryption.pd.json
+    default:
+      parameters:
+      effect: DeployIfNotExists
+    dev:
+      parameters:
+      effect: DeployIfNotExists
+  Modify-Inherit-a-tag-from-the-resource-group-if-missing:
+    type: "Custom"
+    file: Modify-Inherit-a-tag-from-the-resource-group-if-missing.pd.json
+    default:
+      parameters:
+      effect: Modify
+    dev:
+      parameters:
+      effect: Modify
+    
